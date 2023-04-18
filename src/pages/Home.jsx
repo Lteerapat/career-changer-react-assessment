@@ -2,10 +2,11 @@ import Layout from "../Layout";
 import React, {useContext, useEffect, useState} from 'react';
 import '../styles/Home.css'
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserXmark  } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-library.add(faUserXmark);
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faUserXmark  } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// library.add(faUserXmark);
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const mockEmployees = [
     {
@@ -129,7 +130,7 @@ const Home = () => {
                                                 <td>{employee.position}</td>
                                                 <td>
                                                     <button className='delete-button' type='button' onClick={() => handleDelete(employee.id)}>
-                                                        <FontAwesomeIcon icon={faUserXmark} style={{color: "#ff0000",}} />
+                                                    <i className="fa-solid fa-user-xmark" style={{color: "#ff0000"}}></i>
                                                     </button>
                                                 </td>
                                             </tr>
