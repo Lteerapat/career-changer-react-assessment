@@ -1,0 +1,25 @@
+@import './global.css';
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+img {
+    width: 500px;
+}
+
+.myBio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    gap: 1rem;
+}
+p {
+    text-align: justify;
+}
