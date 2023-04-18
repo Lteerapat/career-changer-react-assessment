@@ -9,10 +9,6 @@ h1 {
     gap: 5rem;
 }
 
-button:hover {
-    cursor: pointer;
-}
-
 .set-title {
     background: white;
     border: 1px solid black;

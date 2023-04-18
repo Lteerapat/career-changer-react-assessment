@@ -1,5 +1,9 @@
 import Layout from "../Layout";
 import React, {useContext, useEffect, useState} from 'react';
+import SectorButton from "../components/SectorButton";
+import Form from "../components/Form";
+import Admin from "../components/Admin";
+import User from "../components/User";
 import '../styles/Home.css'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -89,108 +93,35 @@ const Home = () => {
                 <div className="content">
                     <h1>Generation Thailand <br /> {sector}</h1>
 
-                    <div className="button">
-                        <button className='set-title' onClick={handleUserClick}>User Home Sector</button>
-                        <button className='set-title' onClick={handleAdminClick}>Admin Home Sector</button>
-                    </div>
+                    <SectorButton 
+                        handleUserClick={handleUserClick}
+                        handleAdminClick={handleAdminClick}
+                    />
 
                     {sector === 'Home - Admin Sector' ?
                         <div className="admin-content">
                             <h2>Create User Here</h2>
-
-                
-                            <div className="input-form">
-                                <input type="text" placeholder="Name" value={newEmployee.name} onChange={handleNameChange} />
-                                <input type="text" placeholder="Last Name" value={newEmployee.lastname} onChange={handleLastNameChange} />
-                                <input type="text" placeholder="Position" value={newEmployee.position} onChange={handlePositionChange} />
-                                <button onClick={handleSave} className="save-button">Save</button>
-                            </div>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Last Name</th>
-                                        <th>Position</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    {employees.map(employee => {
-                                        return(
-                                            <tr key={employee.id}>
-                                                <td>{employee.name}</td>
-                                                <td>{employee.lastname}</td>
-                                                <td>{employee.position}</td>
-                                                <td>
-                                                    <button className='delete-button' type='button' onClick={() => handleDelete(employee.id)}>
-                                                    <i className="fa-solid fa-user-xmark" style={{color: "#ff0000"}}></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
+                            <Form 
+                                newEmployee={newEmployee} 
+                                handleNameChange={handleNameChange} 
+                                handleLastNameChange={handleLastNameChange} 
+                                handlePositionChange={handlePositionChange} 
+                                handleSave={handleSave} 
+                            />
+                            <Admin 
+                                employees={employees} 
+                                handleDelete={handleDelete} 
+                            />
                         </div>
                         : sector === 'Home - User Sector' ?
-                        <div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Last Name</th>
-                                        <th>Position</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    {employees.map(employee => {
-                                        return(
-                                            <tr key={employee.id}>
-                                                <td>{employee.name}</td>
-                                                <td>{employee.lastname}</td>
-                                                <td>{employee.position}</td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                        </div>
-                        :
-                        <></>
+                            <User employees={employees} />
+                            :
+                            <></>
                     }
                 </div>
-
-                
             </>
         </Layout>
     );
 };
-
-const Form = (props) => {
-    return (
-        <>
-            
-        </>
-    );
-}
-
-const Admin = (props) => {
-    return (
-        <>
-            
-        </>
-    );
-}
-
-const User = (props) => {
-    return (
-        <>
-            
-        </>
-    );
-}
 
 export default Home;
