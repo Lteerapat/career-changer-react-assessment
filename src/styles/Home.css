@@ -20,11 +20,11 @@ button:hover {
     padding: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    transition: .2s;
+    transition: .3s;
 }
 
 .set-title:hover {
-    scale: .95;
+    scale: 1.05;
     box-shadow: -5px 6px black;
 }
 
