@@ -19,3 +19,7 @@ li:active {
 a:visited {
     color: black;
 }
+
+hr {
+    border: 1px solid #CB1C8D;
+}

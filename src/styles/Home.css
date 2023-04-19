@@ -11,7 +11,7 @@ h1 {
 
 .set-title {
     background: white;
-    border: 1px solid black;
+    border: 1px solid #CB1C8D;
     border-radius: 5px;
     padding: 1rem;
     font-size: 1rem;
@@ -21,7 +21,7 @@ h1 {
 
 .set-title:hover {
     scale: 1.05;
-    box-shadow: -5px 6px black;
+    box-shadow: -5px 6px #CB1C8D;
 }
 
 .delete-button {
@@ -45,7 +45,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    outline: 1px solid black;
+    outline: 1px solid #CB1C8D;
 }
 
 .admin-content {
@@ -62,7 +62,7 @@ input[type=text]:focus {
 
 .save-button {
     border: none;
-    background: #5e5bff;
+    background: #CB1C8D;
     padding: 1rem;
     border-radius: 5px;
     color: white;
@@ -71,6 +71,8 @@ input[type=text]:focus {
 
 .save-button:hover {
     scale: .95;
+    background: #CB1C8D;
+    opacity: .8;
 }
 
 table, th, td {
@@ -88,11 +90,15 @@ th, td {
 }
 
 th {
-    background: #f0f0f0;
+    background: #F56EB3;
 }
 
 td {
     background: white;
+}
+
+tr:hover td{
+    background: pink;
 }
 
 
